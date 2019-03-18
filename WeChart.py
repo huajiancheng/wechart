@@ -21,7 +21,7 @@ wechart.register_blueprint(scenic, url="scenic")
 wechart.register_blueprint(goods, url="goods")
 
 # 注册视频对象
-# wechart.register_blueprint(videos1,url="videos1")
+wechart.register_blueprint(videos1, url="videos")
 
 # 注册广告对象
 wechart.register_blueprint(advertise, url='advertise')

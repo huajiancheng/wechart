@@ -78,11 +78,11 @@ def goods_selectall():
 
     # 使用了多线程，多线程共享了同一个数据库连接，但每个execute前没有加上互斥锁
 
-    lock.acquire()
+    # lock.acquire()
     # 执行sql
     dbcursor.execute(sql)
-    lock.release()
-    # 获取全部数据
+    # lock.release()
+    # # 获取全部数据
     goods_data = dbcursor.fetchall()
 
     # 关闭连接

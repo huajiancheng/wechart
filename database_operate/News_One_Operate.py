@@ -126,8 +126,8 @@ def news_three_insert():
 
 
 
-news_one_insert()
-news_two_insert()
-news_three_insert()
+# news_one_insert()
+# news_two_insert()
+# news_three_insert()
 
 

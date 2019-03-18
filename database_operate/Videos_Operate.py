@@ -49,4 +49,4 @@ def videos_insert():
     conn.commit()
 
 
-videos_insert()
+# videos_insert()

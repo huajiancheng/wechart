@@ -41,4 +41,16 @@ def videos_insert():
         # 执行sql
         videos_data = dbcursor.execute(sql)
 
-    return  videos_data
+    return videos_data
+
+
+# 查找视频数据
+def selectVideosData():
+    print("数据库请求视频数据")
+    sql = 'SELECT videos_title,videos_address FROM t_videos'
+
+    dbcursor.execute(sql)
+
+    videos_data = dbcursor.fetchall()
+
+    return videos_data

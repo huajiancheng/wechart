@@ -85,10 +85,10 @@ def scenic_selectall():
     # print("查询景点全部数据")
     sql = 'select scenic_img,scenic_title,scenic_startdata,scenic_boarder,scenic_price from t_scenic'
 
-    lock.acquire()
+    # lock.acquire()
     # 执行sql
     dbcursor.execute(sql)
-    lock.release()
+    # lock.release()
 
     # 获取数据
     scenic_data = dbcursor.fetchall()

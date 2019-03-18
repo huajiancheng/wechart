@@ -1,9 +1,11 @@
 # 插入提交的商品信息
-from dao.Mysql_Pool import dbcursor, conn
+# from dao.Mysql_Pool import dbcursor, conn
 
 
 # def submitPage_insert(receiver_name, receiver_phone, receiver_address,
 #                       shopping_address,goods_img, goods_introduce, goods_price, goods_count, goods_total):
+from dao.Mysql_Basic import dbcursor, conn
+
 
 def submitPage_insert(goods_img,goods_introduce, goods_price, goods_count, goods_total):
     print("向数据库插入用户提交的订单")
