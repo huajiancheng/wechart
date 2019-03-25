@@ -70,4 +70,4 @@ shopping_car_index_Array = []
 #     print("删除景点数据")
 
 
-scenic_insert()
+# scenic_insert()

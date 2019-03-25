@@ -13,7 +13,7 @@ def findAdvertiseData():
 
     advertise_data = advertise_selectall()
 
-    # for i in advertise_data:
-    #     print(i)
+    for i in advertise_data:
+        print(i)
 
     return  jsonify(advertise_data)

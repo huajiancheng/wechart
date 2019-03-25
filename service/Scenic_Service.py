@@ -2,7 +2,7 @@ from flask import Blueprint
 from flask import request, jsonify
 import  random
 from dao.Scenic_Dao import scenic_selectall
-from dao.login_register_modle import *
+from dao.login_register_dao import *
 import json
 
 # 蓝图   创建蓝图 第一个参数为蓝图的名字

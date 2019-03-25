@@ -1,39 +1,34 @@
 import json
 import urllib.request
-from TuLingInterface.TuLingBaseInfo import *
-from flask import request, jsonify, Flask, Blueprint
+from flask import Flask, jsonify, Blueprint, request
 
-# 客服功能
-# 注册蓝图
-TuLingModel = Blueprint("TuLingModel", __name__)
-# 蓝图路由
-TuLingModel.route("/customer", methods=["get", "post"])
-
-
-def customer():
-    # 看请求方法
-    print("用户发起的客户服务是--->", request.method)
+custmoer = Blueprint("custmoer",__name__)
+# 创建路由
+@custmoer.route("/chat_custmoer",methods=["get","post"])
+def chat_custmoer():
     while True:
-        # api_url = "http://openapi.tuling123.com/openapi/api/v2"
-        api_url = url
-        text_input = input('我：')
+        api_url = "http://openapi.tuling123.com/openapi/api/v2"
+        # text_input = input('我：')
 
-        # 参数
+        # 接收用户输入的信息
+        text_input = request.args.get("guest_text")
+
+        print("guest_text------>",text_input)
+
         req = {
             "perception":
+            {
+                "inputText":
                 {
-                    "inputText":
-                        {
-                            "text": text_input
-                        }
-                },
+                    "text": text_input
+                }
+            },
 
             "userInfo":
-                {
-                    # "apiKey": "b0b9e4e213da435096c9d5a8183a629c",
-                    "apiKey": key,
-                    "userId": "OnlyUseAlphabet"
-                }
+            {
+                "apiKey": "b0b9e4e213da435096c9d5a8183a629c",
+                "userId": "OnlyUseAlphabet"
+            }
         }
         # print(req)
         # 将字典格式的req编码为utf8
@@ -48,7 +43,8 @@ def customer():
         # print(response_dic)
 
         intent_code = response_dic['intent']['code']
-        customer_text = response_dic['results'][0]['values']['text']
+        results_text = response_dic['results'][0]['values']['text']
         # print('code：' + str(intent_code))
-        print('图灵机器人的回答: ' + customer_text)
-        return jsonify({"customer_text": customer_text})
+        print('图灵机器人的回答：' + results_text)
+
+        return  jsonify(results_text)

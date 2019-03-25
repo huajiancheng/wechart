@@ -9,7 +9,7 @@ conn = pymysql.connect(host='127.0.0.1',port=3306,database='educational',user='r
 dbcursor = conn.cursor()
 
 # 内网穿透地址
-natapp_url = 'http://fsk8eq.natappfree.cc'
+natapp_url = 'http://5mmxpz.natappfree.cc'
 
 # 服务器地址
-server_url = 'http://fsk8eq.natappfree.cc//static/videos/'
+server_url = 'http://5mmxpz.natappfree.cc//static/videos/'

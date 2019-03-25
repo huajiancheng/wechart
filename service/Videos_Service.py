@@ -20,6 +20,6 @@ def findVideosData():
     random_videos_data = random.sample(videos_data,1)
 
 
-    # print( videos_data)
+    print( videos_data)
     #返回json数据
     return  jsonify(random_videos_data)
